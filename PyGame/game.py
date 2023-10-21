@@ -33,6 +33,32 @@ while running:
         player_pos.x += 300 * dt
         
     
+    # Use mouse
+    if pygame.mouse.get_pressed()[0]:
+        if event.type == pygame.MOUSEMOTION:
+            pos = pygame.mouse.get_pos()
+            player_pos.x = pos[0]
+            player_pos.y = pos[1]
+        
+        
+        
+    # # Use mouse
+    # if event.type == pygame.MOUSEBUTTONDOWN:
+    #     pos = pygame.mouse.get_pos()
+    #     player_pos.x = pos[0]
+    #     player_pos.y = pos[1]
+        
+    # if event.type == pygame.MOUSEBUTTONUP:
+    #     pos = pygame.mouse.get_pos()
+    #     pygame.draw.circle(screen, "red", player_pos, 40)
+        
+    # # Motion
+    # if event.type == pygame.MOUSEMOTION:
+    #     pos = pygame.mouse.get_pos()
+    #     player_pos.x = pos[0]
+    #     player_pos.y = pos[1]
+        
+    
     pygame.display.flip()
     
     dt = clock.tick(60) / 1000
