@@ -1,7 +1,9 @@
 import pygame
 
 pygame.init()
-screen = pygame.display.set_mode((800, 500))
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 500
+screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('PyGame')
 clock = pygame.time.Clock()
 running = True
@@ -15,7 +17,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     
+    # Screen color
     screen.fill('grey')
+    
+    # Draw line
+    pygame.draw.line(screen, 'black', (0, 500), (800, 50), 2)
     
     pygame.draw.circle(screen, 'blue', player_pos, 40)
     
